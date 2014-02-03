@@ -63,12 +63,43 @@ NSString * VTPG_DDToStringFromTypeAndValue(const char * typeCode, void * value);
 		LogMessageCompat(@"DLogv HELPER Unknown _TYPE_CODE_: %s for expression %s in function %s, file %s, line %d", _TYPE_CODE_, #_X_, __func__, __FILE__, __LINE__);\
 }while(0)
 
+#define DLOGM_VERBOSE(tag) DLOGM(3, tag);
+#define DLOGM_INFO(tag) DLOGM(2, tag);
+#define DLOGM_WARN(tag) DLOGM(1, tag);
+#define DLOGM_ERROR(tag) DLOGM(0, tag);
+
+#define DLOGV_VERBOSE(tag, data) DLOGV(3, tag, data);
+#define DLOGV_INFO(tag, data) DLOGV(2, tag, data);
+#define DLOGV_WARN(tag, data) DLOGV(1, tag, data);
+#define DLOGV_ERROR(tag, data) DLOGV(0, tag, data);
+
+#define DLOG_VERBOSE(tag, fmt, ...) DLOG(3, tag, fmt, __VA_ARGS__);
+#define DLOG_INFO(tag, fmt, ...) DLOG(2, tag, fmt, __VA_ARGS__);
+#define DLOG_WARN(tag, fmt, ...) DLOG(1, tag, fmt, __VA_ARGS__);
+#define DLOG_ERROR(tag, fmt, ...) DLOG(0, tag, fmt, __VA_ARGS__);
 
 #else /* NO DEBUG */
-#define DLOGV(level, tag, data)
-#define DLOG(level, tag, ...) /* */
-#define DLOG_DATA(level, tag, data)
-#define DLOG_IMAGE(level, tag, imagedata, width, height)
+
+#define DLOGV(level, tag, ...) do { (void)(__VA_ARGS__); } while (0)
+#define DLOG(level, tag, fmt, ...) /* */
+#define DLOG_DATA(level, tag, ...) do { (void)(__VA_ARGS__); } while (0)
+#define DLOG_IMAGE(level, tag, ...) do { (void)(__VA_ARGS__); } while (0)
 #define DLOGM(level, tag) /* */
+
+#define DLOGM_VERBOSE(tag)
+#define DLOGM_INFO(tag)
+#define DLOGM_WARN(tag)
+#define DLOGM_ERROR(tag)
+
+#define DLOGV_VERBOSE(tag, data)
+#define DLOGV_INFO(tag, data)
+#define DLOGV_WARN(tag, data)
+#define DLOGV_ERROR(tag, data)
+
+#define DLOG_VERBOSE(tag, fmt, ...)
+#define DLOG_INFO(tag, fmt, ...)
+#define DLOG_WARN(tag, fmt, ...)
+#define DLOG_ERROR(tag, fmt, ...)
+
 #endif /* NO DEBUG */
 
