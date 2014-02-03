@@ -36,7 +36,7 @@ Will display in the console:
 ```
 
 In NSLogger:
-![alt tag](https://raw.github.com/akhenakh/NBGCommon/img/dlogm.png)
+![alt tag](https://raw.github.com/akhenakh/NBGCommon/master/img/dlogm.png)
 
 ### DLOGV
 ```objc
@@ -51,7 +51,7 @@ Will display in the console:
 2014-02-03 10:50:16.319 Tetrawords[55919:70b] <view> [NBLoginViewController.m:71 viewWillAppear:] self.view.frame = {{0, 0}, {320, 568}}
 ```
 In NSLogger:
-![alt tag](https://raw.github.com/akhenakh/NBGCommon/img/dlogv.png)
+![alt tag](https://raw.github.com/akhenakh/NBGCommon/master/img/dlogv.png)
 
 ### DLOG
 ```objc
@@ -64,4 +64,4 @@ Will display in the console:
 2014-02-03 10:54:25.162 Tetrawords[56201:70b] <websocket> [NBNet.m:903 webSocket:didFailWithError:] websocket closed with error: The operation couldn’t be completed. Connection refused reconnecting after 8s
 ```
 In NSLogger:
-![alt tag](https://raw.github.com/akhenakh/NBGCommon/img/dlog.png)
+![alt tag](https://raw.github.com/akhenakh/NBGCommon/master/img/dlog.png)
