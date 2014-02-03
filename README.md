@@ -4,7 +4,7 @@ Useful debug tools for ios development.
 
 NBGCommon is just macros for debugging, I used in every projects.
 
-It uses the wonderful NSLogger to display your debug messages in a remote console but also log in the XCode debug console.
+It uses the wonderful [NSLogger](https://github.com/fpillet/NSLogger) to display your debug messages in a remote console but also log in the XCode debug console.
 The code can be tweak to avoid NSLogger but give it a try you will never regret.
 
 ## Usage
