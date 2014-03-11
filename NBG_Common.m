@@ -31,8 +31,8 @@ static NSString* VTPGStringFromBoolOrCharValue(BOOL boolOrCharvalue) {
 }
 
 static NSString *VTPGStringFromFourCharCodeOrUnsignedInt32(FourCharCode fourcc) {
-	return [NSString stringWithFormat:@"%lu ('%c%c%c%c')",
-            fourcc,
+	return [NSString stringWithFormat:@"%u ('%c%c%c%c')",
+            (unsigned int)fourcc,
             (char)(fourcc >> 24) & 0xFF,
             (char)(fourcc >> 16) & 0xFF,
             (char)(fourcc >> 8) & 0xFF,
