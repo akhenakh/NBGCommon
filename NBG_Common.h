@@ -12,6 +12,15 @@ colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 \
 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 \
 blue:((float)(rgbValue & 0xFF))/255.0 alpha:a]
 
+/// BOX(expr)
+///
+/// Macro. Box simple things like `CGPoint` or `CGRect` into an `NSValue`.
+///
+/// (Compare with the use of `@` in `@YES`, @123, @"abc" or `@(1 + 2)`.)
+
+#define BOX(expr) ({ __typeof__(expr) _box_expr = (expr); \
+[NSValue valueWithBytes:&_box_expr objCType:@encode(__typeof__(expr))]; })
+
 //based off of http://www.dribin.org/dave/blog/archives/2008/09/22/convert_to_nsstring/
 NSString * VTPG_DDToStringFromTypeAndValue(const char * typeCode, void * value);
 
